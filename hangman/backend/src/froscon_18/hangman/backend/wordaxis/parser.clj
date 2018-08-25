@@ -5,21 +5,10 @@
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Private
-
-(defn- anchor?
-  [element]
-  (and (vector? element)
-       (= :a (first element))))
-
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Public
 
 (defn parse
-  "Extract word results from wordaxis html"
+  "Extract word results from wordaxis html.
+   Hint: Use `(contrib/element-by-id \"result\")`"
   [html]
-  (->> html
-       (contrib/element-by-id "result")
-       (filter anchor?)
-       (mapv (comp last flatten))))
+  ["TODO" "Please" "implement"])

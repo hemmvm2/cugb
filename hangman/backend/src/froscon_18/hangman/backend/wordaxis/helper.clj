@@ -5,30 +5,13 @@
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Private
-
-(defn- literal?
-  [s]
-  (not (str/includes? s "?")))
-
-(defn- wildcards-only?
-  [s]
-  (re-matches #"\?+" s))
-
-
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Public
 
 (defn compute
-  "Try to compute results without the need to actually fetch data"
+  "Try to compute results without the need to actually fetch data.
+   Hint:
+     - Return `[pattern]` if `pattern` is a literal (ie doesnt include any wildcards)
+     - Return `[]` if `pattern` is either blank or consists of nothing but wildcards
+     - Return `nil` otherwise"
   [pattern]
-  (cond
-    (str/blank? (str pattern))
-    []
-
-    (literal? pattern)
-    [pattern]
-
-    (wildcards-only? pattern)
-    []))
+  ["TODO Please implement"])

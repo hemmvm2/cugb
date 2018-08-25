@@ -9,18 +9,11 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Private
 
-(def ^:private base-url
-  "http://www.wordaxis.com/pattern")
-
-
 (defn- pattern->url
-  "Turn a pattern into a url"
+  "Turn a pattern into a url.
+  Hint: You may wanna use `url/url-encode` and `url/url`."
   [pattern]
-  (->> pattern
-       (str/upper-case)
-       (url/url-encode)
-       (url/url base-url)
-       (str)))
+  "TODO Please implement")
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -28,6 +21,7 @@
 
 (defn fetch!
   "Given a `pattern` return the corresponding html from wordaxis.com.
-   The pattern string consists of alphabetic characters and question-marks."
+   The pattern string consists of alphabetic characters and question-marks.
+   Hint: Use `contrib/fetch!` to do a blocking HTTP GET request."
   [pattern]
-  (contrib/fetch! (pattern->url pattern)))
+  "TODO Please implement")
